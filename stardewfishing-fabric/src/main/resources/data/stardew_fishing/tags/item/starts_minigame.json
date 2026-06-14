@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#minecraft:fishes",
+    "#minecraft:fish",
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:pufferfish",
+    "minecraft:tropical_fish",
+    "#stardew_fishing:inedible_fishes"
+  ]
+}
