@@ -258,9 +258,9 @@ public interface SCItems {
     DeferredItem<Item> END_GLOW = (DeferredItem) BUCKETABLE_FISHES_REGISTRY.register("end_glow", FishItem::new);
     DeferredItem<Item> VOIDBITER = (DeferredItem) BUCKETABLE_FISHES_REGISTRY.register("voidbiter", FishItem::new);
 
-    DeferredItem<Item> STARCAUGHT_BUCKET = (DeferredItem) ITEMS.register("starcaught_bucket", key -> new StarcaughtBucket(key, Fluids.WATER));
+    DeferredItem<Item> STARCAUGHT_BUCKET = (DeferredItem) ITEMS.register("starcaught_bucket", () -> new StarcaughtBucket(Fluids.WATER));
 
-    DeferredItem<Item> COOKED_STARCAUGHT_FISH = (DeferredItem) ITEMS.register("cooked_starcaught_fish", key -> new Item(new Item.Properties().setId(key).food(SCFoodProperties.BASIC_COOKED_FISH)));
+    DeferredItem<Item> COOKED_STARCAUGHT_FISH = (DeferredItem) ITEMS.register("cooked_starcaught_fish", () -> new Item(new Item.Properties().setId(DeferredRegister.Items.getKey()).food(SCFoodProperties.BASIC_COOKED_FISH)));
 
     static void register() {}
 }

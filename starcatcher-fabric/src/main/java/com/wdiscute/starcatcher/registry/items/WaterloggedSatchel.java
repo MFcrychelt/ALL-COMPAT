@@ -1,10 +1,10 @@
 package com.wdiscute.starcatcher.registry.items;
 
-import net.minecraft.resources.ResourceKey;
+import com.wdiscute.starcatcher.DeferredRegister;
 import net.minecraft.world.item.Item;
 
 public class WaterloggedSatchel extends Item {
-    public WaterloggedSatchel(ResourceKey<Item> key) {
-        super(new Item.Properties().setId(key).stacksTo(1));
+    public WaterloggedSatchel() {
+        super(new Item.Properties().setId(DeferredRegister.Items.getKey()).stacksTo(1));
     }
 }

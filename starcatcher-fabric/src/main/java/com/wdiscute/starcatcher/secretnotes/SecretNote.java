@@ -1,11 +1,11 @@
 package com.wdiscute.starcatcher.secretnotes;
 
-import net.minecraft.resources.ResourceKey;
+import com.wdiscute.starcatcher.DeferredRegister;
 import net.minecraft.world.item.Item;
 
 public class SecretNote extends Item {
-    public SecretNote(ResourceKey<Item> key) {
-        super(new Item.Properties().setId(key).stacksTo(1));
+    public SecretNote() {
+        super(new Item.Properties().setId(DeferredRegister.Items.getKey()).stacksTo(1));
     }
 
     public enum Note {

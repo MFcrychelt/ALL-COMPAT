@@ -79,19 +79,19 @@ public interface SCBlocks {
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) BLOCKS.register(name, block);
-        SCItems.ITEMS.register(name, key -> new BlockItem(toReturn.get(), new Item.Properties().setId(key)));
+        SCItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().setId(DeferredRegister.Items.getKey())));
         return toReturn;
     }
 
     private static <T extends Block> DeferredBlock<T> registerHat(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) HATS.register(name, block);
-        SCItems.ITEMS.register(name, key -> new HatItem(toReturn.get(), key));
+        SCItems.ITEMS.register(name, () -> new HatItem(toReturn.get()));
         return toReturn;
     }
 
     private static <T extends Block> DeferredBlock<T> registerTackleBox(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) TACKLE_BOXES.register(name, block);
-        SCItems.ITEMS.register(name, key -> new BlockItem(toReturn.get(), new Item.Properties().setId(key).stacksTo(1)));
+        SCItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().setId(DeferredRegister.Items.getKey()).stacksTo(1)));
         return toReturn;
     }
 

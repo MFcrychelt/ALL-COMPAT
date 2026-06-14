@@ -1,10 +1,10 @@
 package com.wdiscute.starcatcher.registry.items;
 
-import net.minecraft.resources.ResourceKey;
+import com.wdiscute.starcatcher.DeferredRegister;
 import net.minecraft.world.item.Item;
 
 public class FishItem extends Item {
-    public FishItem(ResourceKey<Item> key) {
-        super(new Item.Properties().setId(key).food(SCFoodProperties.BASIC_RAW_FISH));
+    public FishItem() {
+        super(new Item.Properties().setId(DeferredRegister.Items.getKey()).food(SCFoodProperties.BASIC_RAW_FISH));
     }
 }

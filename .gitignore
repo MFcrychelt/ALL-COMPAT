@@ -1,0 +1,46 @@
+# Gradle cache and build
+.gradle/
+build/
+gradle-app.setting
+.gradletasknamecache
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.settings/
+.classpath
+.project
+.metadata
+bin/
+
+# Minecraft development run directories
+run/
+runs/
+
+# Uploads (large files not needed in git)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs and crash reports
+*.log
+hs_err_pid*
+
+# Archives at root level only (jars in subdirs are under build/)
+/*.jar
+/*.zip
+/*.rar
+/*.tar.gz
+
+# Local environment
+.env
+*.local

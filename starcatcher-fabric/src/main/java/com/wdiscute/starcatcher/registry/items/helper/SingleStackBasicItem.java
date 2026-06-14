@@ -1,10 +1,10 @@
 package com.wdiscute.starcatcher.registry.items.helper;
 
-import net.minecraft.resources.ResourceKey;
+import com.wdiscute.starcatcher.DeferredRegister;
 import net.minecraft.world.item.Item;
 
 public class SingleStackBasicItem extends Item {
-    public SingleStackBasicItem(ResourceKey<Item> key) {
-        super(new Item.Properties().setId(key).stacksTo(1));
+    public SingleStackBasicItem() {
+        super(new Item.Properties().setId(DeferredRegister.Items.getKey()).stacksTo(1));
     }
 }
