@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": [
+    "${mod_author}"
+  ],
+  "contact": {
+    "website": "https://www.curseforge.com/minecraft/mc-mods/fishing-real",
+    "repo": "https://github.com/ExpensiveKoala/Fishing-Real",
+    "issues": "https://github.com/ExpensiveKoala/Fishing-Real/issues"
+  },
+  "license": "${license}",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "koala.fishingreal.FishingRealFabric"
+    ]
+  },
+  "mixins": [
+    "${mod_id}.fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=${java_version}",
+    "forgeconfigapiport": "^${fconfig_version}"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

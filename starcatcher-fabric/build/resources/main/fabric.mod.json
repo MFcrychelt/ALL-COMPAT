@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "starcatcher",
+  "version": "2.3.14",
+  "name": "Starcatcher (Fabric)",
+  "description": "Port of Starcatcher mod to Fabric, fully compatible with Stardew Fishing mechanics!",
+  "authors": [
+    "wdiscute", "Nikdo53"
+  ],
+  "contact": {
+    "repo": "https://github.com/wdiscute/starcatcher"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.wdiscute.starcatcher.Starcatcher"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": ">=26.1"
+  }
+}

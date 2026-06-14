@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "fishingreal",
+  "version": "${version}",
+  "name": "FishingReal (Fabric)",
+  "description": "A mod which allows you to reel in real fish instead of the fish in item form.",
+  "authors": [
+    "PricelessKoala"
+  ],
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "koala.fishingreal.FishingRealFabric"
+    ]
+  },
+  "mixins": [
+    "fishingreal.fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": ">=26.1"
+  }
+}
