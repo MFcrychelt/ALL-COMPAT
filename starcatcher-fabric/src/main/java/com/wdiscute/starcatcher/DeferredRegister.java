@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class DeferredRegister<T> {
@@ -71,11 +72,10 @@ public class DeferredRegister<T> {
             super(net.minecraft.core.registries.BuiltInRegistries.BLOCK, modId);
         }
 
-        @Override
-        public <U extends net.minecraft.world.level.block.Block> DeferredBlock<U> register(String name, Supplier<U> sup) {
+        public <U extends net.minecraft.world.level.block.Block> DeferredBlock<U> register(String name, Function<ResourceKey<net.minecraft.world.level.block.Block>, U> factory) {
             Identifier id = Identifier.fromNamespaceAndPath(super.modId, name);
-            U val = Registry.register(super.registry, id, sup.get());
             ResourceKey<net.minecraft.world.level.block.Block> key = ResourceKey.create(super.registry.key(), id);
+            U val = Registry.register(super.registry, id, factory.apply(key));
             DeferredBlock<U> holder = new DeferredBlock<>(val, key);
             super.entries.add(holder);
             return holder;

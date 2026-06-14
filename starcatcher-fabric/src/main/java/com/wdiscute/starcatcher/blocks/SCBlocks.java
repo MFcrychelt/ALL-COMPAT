@@ -10,13 +10,14 @@ import com.wdiscute.starcatcher.blocks.stand.StandBlock;
 import com.wdiscute.starcatcher.blocks.tacklebox.TackleBoxBlock;
 import com.wdiscute.starcatcher.registry.SCItems;
 import com.wdiscute.starcatcher.registry.items.HatItem;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 public interface SCBlocks {
     DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Starcatcher.MOD_ID);
@@ -42,23 +43,23 @@ public interface SCBlocks {
 
     DeferredBlock<Block> CONCH = registerBlock("conch", ConchBlock::new);
 
-    DeferredBlock<Block> TACKLE_BOX = registerTackleBox("tackle_box", () -> new TackleBoxBlock(null, MapColor.TERRACOTTA_WHITE));
-    DeferredBlock<Block> TACKLE_BOX_WHITE = registerTackleBox("tackle_box_white", () -> new TackleBoxBlock(DyeColor.WHITE, MapColor.SNOW));
-    DeferredBlock<Block> TACKLE_BOX_LIME = registerTackleBox("tackle_box_lime", () -> new TackleBoxBlock(DyeColor.LIME, MapColor.COLOR_LIGHT_GREEN));
-    DeferredBlock<Block> TACKLE_BOX_ORANGE = registerTackleBox("tackle_box_orange", () -> new TackleBoxBlock(DyeColor.ORANGE, MapColor.COLOR_ORANGE));
-    DeferredBlock<Block> TACKLE_BOX_RED = registerTackleBox("tackle_box_red", () -> new TackleBoxBlock(DyeColor.RED, MapColor.COLOR_RED));
-    DeferredBlock<Block> TACKLE_BOX_GRAY = registerTackleBox("tackle_box_gray", () -> new TackleBoxBlock(DyeColor.GRAY, MapColor.COLOR_GRAY));
-    DeferredBlock<Block> TACKLE_BOX_LIGHT_GRAY = registerTackleBox("tackle_box_LIGHT_GRAY", () -> new TackleBoxBlock(DyeColor.LIGHT_GRAY, MapColor.COLOR_LIGHT_GRAY));
-    DeferredBlock<Block> TACKLE_BOX_BLACK = registerTackleBox("tackle_box_black", () -> new TackleBoxBlock(DyeColor.BLACK, MapColor.COLOR_BLACK));
-    DeferredBlock<Block> TACKLE_BOX_BROWN = registerTackleBox("tackle_box_brown", () -> new TackleBoxBlock(DyeColor.BROWN, MapColor.COLOR_BROWN));
-    DeferredBlock<Block> TACKLE_BOX_YELLOW = registerTackleBox("tackle_box_yellow", () -> new TackleBoxBlock(DyeColor.YELLOW, MapColor.COLOR_YELLOW));
-    DeferredBlock<Block> TACKLE_BOX_PINK = registerTackleBox("tackle_box_pink", () -> new TackleBoxBlock(DyeColor.PINK, MapColor.COLOR_PINK));
-    DeferredBlock<Block> TACKLE_BOX_MAGENTA = registerTackleBox("tackle_box_magenta", () -> new TackleBoxBlock(DyeColor.MAGENTA, MapColor.COLOR_MAGENTA));
-    DeferredBlock<Block> TACKLE_BOX_PURPLE = registerTackleBox("tackle_box_purple", () -> new TackleBoxBlock(DyeColor.PURPLE, MapColor.TERRACOTTA_PURPLE));
-    DeferredBlock<Block> TACKLE_BOX_BLUE = registerTackleBox("tackle_box_blue", () -> new TackleBoxBlock(DyeColor.BLUE, MapColor.COLOR_BLUE));
-    DeferredBlock<Block> TACKLE_BOX_LIGHT_BLUE = registerTackleBox("tackle_box_light_blue", () -> new TackleBoxBlock(DyeColor.LIGHT_BLUE, MapColor.COLOR_LIGHT_BLUE));
-    DeferredBlock<Block> TACKLE_BOX_CYAN = registerTackleBox("tackle_box_cyan", () -> new TackleBoxBlock(DyeColor.CYAN, MapColor.COLOR_CYAN));
-    DeferredBlock<Block> TACKLE_BOX_GREEN = registerTackleBox("tackle_box_green", () -> new TackleBoxBlock(DyeColor.GREEN, MapColor.COLOR_GREEN));
+    DeferredBlock<Block> TACKLE_BOX = registerTackleBox("tackle_box", (key) -> new TackleBoxBlock(key, null, MapColor.TERRACOTTA_WHITE));
+    DeferredBlock<Block> TACKLE_BOX_WHITE = registerTackleBox("tackle_box_white", (key) -> new TackleBoxBlock(key, DyeColor.WHITE, MapColor.SNOW));
+    DeferredBlock<Block> TACKLE_BOX_LIME = registerTackleBox("tackle_box_lime", (key) -> new TackleBoxBlock(key, DyeColor.LIME, MapColor.COLOR_LIGHT_GREEN));
+    DeferredBlock<Block> TACKLE_BOX_ORANGE = registerTackleBox("tackle_box_orange", (key) -> new TackleBoxBlock(key, DyeColor.ORANGE, MapColor.COLOR_ORANGE));
+    DeferredBlock<Block> TACKLE_BOX_RED = registerTackleBox("tackle_box_red", (key) -> new TackleBoxBlock(key, DyeColor.RED, MapColor.COLOR_RED));
+    DeferredBlock<Block> TACKLE_BOX_GRAY = registerTackleBox("tackle_box_gray", (key) -> new TackleBoxBlock(key, DyeColor.GRAY, MapColor.COLOR_GRAY));
+    DeferredBlock<Block> TACKLE_BOX_LIGHT_GRAY = registerTackleBox("tackle_box_LIGHT_GRAY", (key) -> new TackleBoxBlock(key, DyeColor.LIGHT_GRAY, MapColor.COLOR_LIGHT_GRAY));
+    DeferredBlock<Block> TACKLE_BOX_BLACK = registerTackleBox("tackle_box_black", (key) -> new TackleBoxBlock(key, DyeColor.BLACK, MapColor.COLOR_BLACK));
+    DeferredBlock<Block> TACKLE_BOX_BROWN = registerTackleBox("tackle_box_brown", (key) -> new TackleBoxBlock(key, DyeColor.BROWN, MapColor.COLOR_BROWN));
+    DeferredBlock<Block> TACKLE_BOX_YELLOW = registerTackleBox("tackle_box_yellow", (key) -> new TackleBoxBlock(key, DyeColor.YELLOW, MapColor.COLOR_YELLOW));
+    DeferredBlock<Block> TACKLE_BOX_PINK = registerTackleBox("tackle_box_pink", (key) -> new TackleBoxBlock(key, DyeColor.PINK, MapColor.COLOR_PINK));
+    DeferredBlock<Block> TACKLE_BOX_MAGENTA = registerTackleBox("tackle_box_magenta", (key) -> new TackleBoxBlock(key, DyeColor.MAGENTA, MapColor.COLOR_MAGENTA));
+    DeferredBlock<Block> TACKLE_BOX_PURPLE = registerTackleBox("tackle_box_purple", (key) -> new TackleBoxBlock(key, DyeColor.PURPLE, MapColor.TERRACOTTA_PURPLE));
+    DeferredBlock<Block> TACKLE_BOX_BLUE = registerTackleBox("tackle_box_blue", (key) -> new TackleBoxBlock(key, DyeColor.BLUE, MapColor.COLOR_BLUE));
+    DeferredBlock<Block> TACKLE_BOX_LIGHT_BLUE = registerTackleBox("tackle_box_light_blue", (key) -> new TackleBoxBlock(key, DyeColor.LIGHT_BLUE, MapColor.COLOR_LIGHT_BLUE));
+    DeferredBlock<Block> TACKLE_BOX_CYAN = registerTackleBox("tackle_box_cyan", (key) -> new TackleBoxBlock(key, DyeColor.CYAN, MapColor.COLOR_CYAN));
+    DeferredBlock<Block> TACKLE_BOX_GREEN = registerTackleBox("tackle_box_green", (key) -> new TackleBoxBlock(key, DyeColor.GREEN, MapColor.COLOR_GREEN));
 
     DeferredBlock<Block> FISHERMAN_HAT_WHITE = registerHat("fisherman_hat_white", HatBlock::new);
     DeferredBlock<Block> FISHERMAN_HAT_LIME = registerHat("fisherman_hat_lime", HatBlock::new);
@@ -77,19 +78,19 @@ public interface SCBlocks {
     DeferredBlock<Block> FISHERMAN_HAT_CYAN = registerHat("fisherman_hat_cyan", HatBlock::new);
     DeferredBlock<Block> FISHERMAN_HAT_GREEN = registerHat("fisherman_hat_green", HatBlock::new);
 
-    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<ResourceKey<Block>, T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) BLOCKS.register(name, block);
         SCItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().setId(DeferredRegister.Items.getKey())));
         return toReturn;
     }
 
-    private static <T extends Block> DeferredBlock<T> registerHat(String name, Supplier<T> block) {
+    private static <T extends Block> DeferredBlock<T> registerHat(String name, Function<ResourceKey<Block>, T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) HATS.register(name, block);
         SCItems.ITEMS.register(name, () -> new HatItem(toReturn.get()));
         return toReturn;
     }
 
-    private static <T extends Block> DeferredBlock<T> registerTackleBox(String name, Supplier<T> block) {
+    private static <T extends Block> DeferredBlock<T> registerTackleBox(String name, Function<ResourceKey<Block>, T> block) {
         DeferredBlock<T> toReturn = (DeferredBlock) TACKLE_BOXES.register(name, block);
         SCItems.ITEMS.register(name, () -> new BlockItem(toReturn.get(), new Item.Properties().setId(DeferredRegister.Items.getKey()).stacksTo(1)));
         return toReturn;
